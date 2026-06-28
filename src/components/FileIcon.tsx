@@ -2,15 +2,12 @@ import {
   FileText,
   FileSpreadsheet,
   FileImage,
-  FileджсонPlaceholder,
   FileCode2,
   FileAudio,
   FileType2,
   File,
   Globe,
 } from "lucide-react";
-
-// (placeholder import removed below)
 import type { LucideIcon } from "lucide-react";
 
 const MAP: Record<string, LucideIcon> = {
