@@ -140,9 +140,8 @@ async function docxToMarkdown(file: File, settings: ConvertSettings): Promise<st
 
 async function pdfToMarkdown(file: File): Promise<string> {
   const pdfjs = await import("pdfjs-dist");
-  // @ts-expect-error worker entry
   const worker = await import("pdfjs-dist/build/pdf.worker.min.mjs?url");
-  pdfjs.GlobalWorkerOptions.workerSrc = worker.default;
+  pdfjs.GlobalWorkerOptions.workerSrc = (worker as { default: string }).default;
   const buf = await file.arrayBuffer();
   const doc = await pdfjs.getDocument({ data: buf }).promise;
   const pages: string[] = [];
