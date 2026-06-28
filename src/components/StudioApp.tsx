@@ -16,7 +16,6 @@ import { FileIcon } from "./FileIcon";
 import {
   convertFile,
   getExtension,
-  estimateTokens,
   DEFAULT_SETTINGS,
   type ConvertSettings,
   type ConvertResult,
